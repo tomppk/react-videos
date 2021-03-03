@@ -1,6 +1,7 @@
 import React from "react";
 import SearchBar from "./SearchBar";
 import youtube from "../apis/youtube";
+import VideoList from "./VideoList";
 
 class App extends React.Component {
   state = { videos: [] };
@@ -25,6 +26,7 @@ class App extends React.Component {
           element. Child uses props.onFormSubmit to call
           function. Function parameter (term) is input from SearchBar instance's state.term. Arrow function used in callback onTermSubmit to bind 'this' to refer to instance of App  */}
         <SearchBar onFormSubmit={this.onTermSubmit} />
+        <VideoList videos={this.state.videos} />
       </div>
     );
   }
