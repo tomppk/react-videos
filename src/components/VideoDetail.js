@@ -3,7 +3,15 @@ import React from "react";
 // Destructure video object from props object
 const VideoDetail = ({ video }) => {
   if (!video) {
-    return <div>Loading...</div>;
+    return (
+      <div className="ui segment">
+        <div className="ui embed">
+          <div className="ui active inverted dimmer">
+            <div className="ui text loader">Loading...</div>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   // Get baseUrl for embedded iFrame tag and add video id
